@@ -2,7 +2,16 @@
 
 Test and play around with React and Sanity.io
 
-## Installation & Setup
+## Installation
+
+```bash
+git clone git@github.com:HansKre/sanity-playground.git
+npm install
+npm start &
+sanity start
+```
+
+## Initial Installation & Setup
 
 * Init fresh React App
 
