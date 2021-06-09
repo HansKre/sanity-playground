@@ -13,12 +13,13 @@ sanity start
 
 ## Initial Installation & Setup
 
-* Init fresh React App
+* Init fresh Nextjs App
 
 ```bash
-npx create-react-app sanity-playground
-cd sanity-playground
+npx create-next-app --typescript
+cd <your folder>
 code .
+npm run dev
 ```
 
 * Install & Setup Sanity
