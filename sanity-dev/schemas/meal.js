@@ -1,3 +1,4 @@
+import React from 'react'
 import FormattingPreview from './FormattingPreview';
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -21,7 +22,14 @@ export default {
                         // Only allow these decorators
                         decorators: [
                             { title: 'Fett', value: 'strong' },
-                            { title: 'Hochgestellt', value: 'sup' },
+                            {
+                                title: 'Hochgestellt',
+                                value: 'sup',
+                                blockEditor: {
+                                    icon: () => <div>⤴</div>,
+                                    render: ({ children }) => <span><sup>{children}</sup></span>
+                                }
+                            },
                         ],
                         // disallow links
                         annotations: []
