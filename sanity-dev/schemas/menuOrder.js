@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 
-const TITLE = 'Reihenfolge der Speise-Kategorien'
+const TITLE = 'Konfiguration'
 
 export default {
     name: 'menuOrder',
@@ -16,7 +16,7 @@ export default {
     fields: [
         {
             name: 'menuOrder',
-            title: TITLE,
+            title: 'Reihenfolge der Speisen',
             type: 'array',
             of: [
                 {
@@ -51,6 +51,18 @@ export default {
                     }
                 }
             ]
+        },
+        {
+            name: 'zusatzstoffe',
+            title: 'Zusatzstoffe',
+            type: 'array',
+            of: [{ type: 'string' }]
+        },
+        {
+            name: 'allergene',
+            title: 'Allergene',
+            type: 'array',
+            of: [{ type: 'string' }]
         },
         {
             name: 'myUniqueReferencesList',
