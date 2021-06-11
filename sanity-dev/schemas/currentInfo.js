@@ -7,18 +7,21 @@ export default {
         {
             name: 'header',
             title: 'Überschrift',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required().min(10).max(80)
         },
         {
             name: 'date',
             title: 'Datum',
-            type: 'date'
+            type: 'date',
+            validation: Rule => Rule.required()
         },
         {
             name: 'message',
             title: 'Nachricht',
             type: 'array',
-            of: [{ type: 'block' }]
+            of: [{ type: 'block' }],
+            validation: Rule => Rule.required()
         },
     ]
 }
