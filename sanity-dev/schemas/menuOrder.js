@@ -55,14 +55,38 @@ export default {
         {
             name: 'openingHours',
             title: 'Öffnungszeiten',
-            type: 'array',
-            of: [{ type: 'block' }]
+            type: 'object',
+            fields: [
+                {
+                    name: 'title',
+                    title: 'Title',
+                    type: 'string'
+                },
+                {
+                    name: 'block',
+                    title: 'Block',
+                    type: 'array',
+                    of: [{ type: 'block' }]
+                }
+            ]
         },
         {
             name: 'contact',
             title: 'Kontakt',
-            type: 'array',
-            of: [{ type: 'block' }]
+            type: 'object',
+            fields: [
+                {
+                    name: 'title',
+                    title: 'Titel',
+                    type: 'string'
+                },
+                {
+                    name: 'block',
+                    title: 'Block',
+                    type: 'array',
+                    of: [{ type: 'block' }]
+                }
+            ]
         },
         {
             name: 'zusatzstoffe',
