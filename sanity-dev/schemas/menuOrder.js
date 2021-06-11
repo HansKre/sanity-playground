@@ -53,6 +53,18 @@ export default {
             ]
         },
         {
+            name: 'openingHours',
+            title: 'Öffnungszeiten',
+            type: 'array',
+            of: [{ type: 'block' }]
+        },
+        {
+            name: 'contact',
+            title: 'Kontakt',
+            type: 'array',
+            of: [{ type: 'block' }]
+        },
+        {
             name: 'zusatzstoffe',
             title: 'Zusatzstoffe',
             type: 'array',
