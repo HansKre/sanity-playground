@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   name: 'category',
-  title: 'Kategorie',
+  title: 'Speise-Kategorien',
   type: 'document',
   fields: [
     {

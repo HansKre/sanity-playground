@@ -1,7 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
+
+const TITLE = 'Reihenfolge der Speise-Kategorien'
+
 export default {
     name: 'menuOrder',
-    title: 'Reihenfolge der Speisen',
+    title: TITLE,
     type: 'document',
     // disallow create and delete actions since this is a singleton
     __experimental_actions: [
@@ -13,7 +16,7 @@ export default {
     fields: [
         {
             name: 'menuOrder',
-            title: 'Reihenfolge der Speisen',
+            title: TITLE,
             type: 'array',
             of: [
                 {
@@ -48,6 +51,17 @@ export default {
                     }
                 }
             ]
+        },
+        {
+            name: 'myUniqueReferencesList',
+            title: 'My List of Unique References',
+            type: 'array',
+            of: [
+                {
+                    type: 'uniquereferencesinputlist',
+                    to: { type: 'category' }
+                }
+            ]
         }
     ],
     // fix the preview, since the first field is used for the default title which is in our case an array
@@ -55,7 +69,7 @@ export default {
         select: {},
         prepare(selection) {
             return {
-                title: 'Reihenfolge der Speisen'
+                title: TITLE
             }
         }
     }
