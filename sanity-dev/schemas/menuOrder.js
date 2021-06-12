@@ -1,4 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
+import GroqFilter from 'sanity-groq-filter'
 
 const TITLE = 'Konfiguration'
 
@@ -24,33 +25,11 @@ export default {
                     title: 'Kategorie hinzufügen',
                     to: { type: 'category' },
                     // dynamic filters: https://www.sanity.io/docs/reference-type#8118f73f6758
-                    options: {
-                        filter: ({ document }) => {
-                            const { menuOrder } = document
-
-                            const refsToExclude = []
-                            if (menuOrder?.length > 0) {
-                                menuOrder.forEach(entry => {
-                                    if (entry.hasOwnProperty('_ref')) refsToExclude.push(entry._ref)
-                                })
-                            }
-                            // always exclude drafts by default
-                            let filter = '!(_id match "drafts*")'
-                            const params = {}
-                            refsToExclude.forEach((ref, i) => {
-                                const paramName = `ref${i}`
-                                params[paramName] = ref
-                                filter += `&& _id != $${paramName}`
-                            })
-
-                            return {
-                                filter: filter,
-                                params: params
-                            }
-                        }
-                    }
+                    // options: { filter: GroqFilter.matches('category', 'Grill') }
+                    options: { filter: GroqFilter.unusedReferences }
                 }
-            ]
+            ],
+            validation: Rule => Rule.unique()
         },
         {
             name: 'openingHours',

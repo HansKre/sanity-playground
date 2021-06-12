@@ -26,6 +26,7 @@
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
-    "sanity-plugin-html-to-portable-text": "^0.0.2"
+    "sanity-groq-filter": "^0.0.5",
+    "sanity-plugin-html-to-portable-text": "^0.0.3"
   }
 }
